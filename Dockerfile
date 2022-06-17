@@ -1,3 +1,5 @@
+# Image for the urllib3 client
+
 FROM python:3.10.5-slim-bullseye
 
 RUN apt update && apt install --yes \
@@ -5,15 +7,10 @@ RUN apt update && apt install --yes \
     iproute2 \
     tcpdump
 
-WORKDIR /home
-
-COPY urllib3/ urllib3/
-RUN pip install -e ./urllib3
-
 RUN pip install requests
 
-# 'docker exec -it <container-name> bash' in then run script manually
-ENTRYPOINT [ "sleep", "infinity" ]
+COPY entrypoint.sh /usr/bin/
 
+WORKDIR /home
 
-# tc qdisc add dev eth0 root tbf rate 10mbit latency 50ms burst 1540
+ENTRYPOINT [ "/usr/bin/entrypoint.sh" ]

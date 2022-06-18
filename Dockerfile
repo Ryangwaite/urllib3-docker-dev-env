@@ -7,8 +7,6 @@ RUN apt update && apt install --yes \
     iproute2 \
     tcpdump
 
-RUN pip install requests
-
 COPY entrypoint.sh /usr/bin/
 
 WORKDIR /home

@@ -8,6 +8,7 @@ services:
       "-cert", "/var/run/secrets/upload-server-cert",
       "-key", "/var/run/secrets/upload-server-key",
       "-tlsport", "443",
+      "-port", "80",
       "-upload_limit", "805306368",  # 768MB
       "/var/data/"
     ]

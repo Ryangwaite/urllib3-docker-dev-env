@@ -7,6 +7,8 @@ RUN apt update && apt install --yes \
     iproute2 \
     tcpdump
 
+RUN pip install pyOpenSSL==22.0.0
+
 COPY entrypoint.sh /usr/bin/
 
 WORKDIR /home

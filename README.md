@@ -2,7 +2,7 @@
 
 ## Overview
 
-This environment was created to reproduce and fix this bug: <INSERT LINK ONCE RAISED IN URLLIB3>
+This environment was created to reproduce and fix [this](https://github.com/urllib3/urllib3/issues/2645) bug.
 
 There's 2 docker containers:
 - `upload-server` - an instance of [simple-upload-server](https://github.com/mayth/go-simple-upload-server) for sending requests to
